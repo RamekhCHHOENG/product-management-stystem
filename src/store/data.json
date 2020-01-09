@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple MacBook Pro",
+      "price": "2,300.00",
+      "year": "2020"
+    },
+    {
+      "id": 1,
+      "name": "Apple MacBook Pro",
+      "price": "2,300.00",
+      "year": "2020"
+    },
+    {
+      "id": 1,
+      "name": "Apple MacBook Pro",
+      "price": "2,300.00",
+      "year": "2020"
+    },
+    {
+      "id": 1,
+      "name": "Apple MacBook Pro",
+      "price": "2,300.00",
+      "year": "2020"
+    }
+  ]
+}

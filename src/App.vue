@@ -18,5 +18,13 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: "Sora-Regular";
+  src: url('Sora-Regular.woff') format('woff');
+}
 
+body {
+  font-family: "Sora-Regular";
+  background-color: aquamarine;
+}
 </style>

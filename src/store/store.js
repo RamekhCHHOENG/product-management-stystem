@@ -1,43 +1,52 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.use(Vuex)
-const URL = 'https://jsonplaceholder.typicode.com/posts';
+Vue.use(VueAxios, axios)
+const URL = 'http://localhost:3000/products';
 export const store =  new Vuex.Store({
     state: {
-        state: {
-            posts: [],
-            loading: true
-          },
-          actions: {
-            loadData({   
-              commit
-            }) {
-              axios.get(URL).then((response) => {
-                console.log(response.data, this)
-                commit('updatePosts', response.data)
-                commit('changeLoadingState', false)
-              })
-            }
-          },    
+      products: [],
+      loading: true,
+      flavor: 'Orange',
+      loading: true,
+      posts: [],
     },
+
     getters: {
-
+      flavor: state => {
+        return state.flavor
+      },
+      productList: state => {
+        return state.products
+      },
+      getPostList: state => {
+        return state.posts
+      }
     },
-    mutations: {
 
-    },
+
     actions: {
-
-    }
+      LoadPosts ({ commit }) {
+        axios
+          .get(URL)
+          .then(r => r.data)
+          .then(products => {
+            commit('SET_POST', products)
+          })
+      }
+    },
+ 
+    mutations: {
+      change(state, flavor) {
+        state.flavor = flavor
+      },
+      SET_POST (state, products) {
+        state.products = products
+      }
+    },
 })
 
-new Vue({
-    el: '#app',
-    computed: Vuex.mapState(['posts', 'loading']),
-    created() {
-      //console.log(this.$store)
-      this.$store.dispatch('loadData') // dispatch loading
-    }
-  })
 

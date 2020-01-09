@@ -17,10 +17,10 @@ export default new Router({
       name: 'about',
       component: About
     },
-    {
-      path: '/product',
-      name: 'Products',
-      component: Products
-    }
+    // {
+    //   path: '/product',
+    //   name: 'Products',
+    //   component: Products
+    // }
   ]
 })
